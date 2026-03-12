@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
+	int selection = 0;
 	ApricotPie aprpie;
 	ApplePie appie;
 	RaspberryPie rpie;
@@ -17,5 +18,26 @@ int main()
 	cout << appie.description() << endl;
 	cout << rpie.description() << endl;
 
+	Pie* piePtr = nullptr;
+	cout << "Please enter a number(1-3): " << endl;
+	cout << "1: Apple Pie" << endl;
+	cout << "2: Raspberry Pie" << endl;
+	cout << "3: Apricot Pie" << endl;
+	cin >> selection;
+	if (selection == 1){
+		piePtr = new ApplePie;
+		cout << "You chose " << (*piePtr).description() << endl;
+	}
+	else if (selection == 2) {
+		piePtr = new RaspberryPie;
+		cout << "You chose " << (*piePtr).description() << endl;
+	}
+	else if (selection == 3) {
+		piePtr = new ApricotPie;
+		cout << "You chose " << (*piePtr).description() << endl;
+	}
+	delete piePtr;
+
+	
 	return 0;
 }
